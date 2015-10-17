@@ -28,12 +28,10 @@ class Board
     string_rows = board_data.split("\n")
     @num_columns = string_rows.first.length
     @num_rows = string_rows.length
-    # TODO: clean up this brute force mess
-    @rows = []
-    string_rows.collect do |row|
+    @rows = string_rows.collect do |row|
       row_of_cells = []
       row.each_char { |cell| row_of_cells << Cell.new(cell) }
-      @rows << row_of_cells
+      row_of_cells
     end
   end
 
