@@ -26,9 +26,8 @@ class Board
 
   def initialize(board_data)
     string_rows = board_data.split("\n")
-    board_dimensions = string_rows.shift
-    @num_columns = board_dimensions[0].to_i
-    @num_rows = board_dimensions[2].to_i
+    @num_columns = string_rows.first.length
+    @num_rows = string_rows.length
     # TODO: clean up this brute force mess
     @rows = []
     string_rows.collect do |row|
